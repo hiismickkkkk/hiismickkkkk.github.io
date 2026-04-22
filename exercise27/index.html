@@ -8,13 +8,27 @@
 }
 .column {
   float: left;
-  width: 33%;
-  padding: 20px;
+  width: 33.33%;
+  padding:10px;
 }
 .column1 {
   float: left;
   width: 100%;
-  padding: 20px;
+  padding:10px;
+}
+.column2 {
+  float: left;
+  width: 25%;
+  padding:10px;
+}
+.content {
+background-color:lightgreen;padding:20px;
+}
+.content1 {
+background-color:lightblue;padding:20px;
+}
+.content2 {
+background-color:gray;padding:20px;
 }
 .row:after {
   content: "";
@@ -26,34 +40,63 @@
   .column {
     width: 100%;
   }
+    .column2 {
+    width: 50%;
+  }
 }
 
 </style>
 </head>
 <body>
 <div class="row">
-  <div class="column1" style="background-color:lightgreen;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
+  <div class="column1"> 
+  	<div class="content">
+    	<h2>Column 1</h2>
+    </div>
   </div>
 </div>
+
 <div class="row">
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
+  <div class="column">
+  	<div class="content1">
+    	<h2>Column 2</h2>
+    </div>
   </div>
-  
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
+  <div class="column">
+  	<div class="content1">
+    	<h2>Column 2</h2>
+    </div>
   </div>
-  
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
+  <div class="column">
+  	<div class="content1">
+    	<h2>Column 2</h2>
+    </div>
+  </div>
+</div>  
+
+
+<div class="row">
+  <div class="column2">
+  	<div class="content2">
+    	<h2>Column 3</h2>
+    </div>
+  </div>
+  <div class="column2">
+  	<div class="content2">
+    	<h2>Column 3</h2>
+    </div>
+  </div>
+  <div class="column2">
+  	<div class="content2">
+    	<h2>Column 3</h2>
+    </div>
+  </div>
+  <div class="column2">
+  	<div class="content2">
+    	<h2>Column 3</h2>
+    </div>
   </div>
 </div>
-  
 
 </body>
 </html>
