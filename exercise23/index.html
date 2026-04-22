@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+body {
+    background-color: #fff;
+    margin: 20px;
+}
+
+.main-container {
+    display: flex;
+    border: 1px solid #eaeaea;
+    width: 850px; 
+    height: 500px;
+}
+
+
+.sidebar {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #cfddff;
+}
+
+.header {
+    height: 35px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 15px;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #eaeaea;
+    color: #2f2f2f;
+    width: 100%;
+}
+
+.icon-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 15px;
+}
+
+.btn-custom-img, .btn-custom-img2 {
+    width: 27px;
+    height: 27px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.btn-custom-img {
+    background-image: url('https://www.nicepng.com/png/detail/103-1039766_open-up-arrow-icon-small.png');
+}
+
+.btn-custom-img2 {
+    background-image: url('https://www.nicepng.com/png/detail/50-509099_wikimedia-commons-clipart-royalty-png-little-arrow-fish.png');
+}
+
+.file-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.file-item {
+	padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.file-item.selected {
+    background-color: #e8f3ff;
+    border-top: 1px solid #cfddff;
+    border-bottom: 1px solid #cfddff;
+}
+
+.footer {
+    background-color: #f3f3f3;
+    padding: 10px 12px;
+    border-top: 1px solid #eaeaea;
+}
+
+.blue-text {
+    color: #0084ff;
+}
+
+
+.preview-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    color: #707070;
+}
+
+
+.btn-info {
+    height: 22px;             
+    border-radius: 8px;       
+    background-color: #ffffff;
+    border: 1px solid #2f2f2f;
+    color: #2f2f2f;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.btn-custom-img {
+    width: 27px;          
+    height: 27px;          
+    background-image: url('https://www.nicepng.com/png/detail/103-1039766_open-up-arrow-icon-small.png');
+    background-size: contain; 
+    background-position: center;
+    background-color: transparent; 
+    border: none;           
+    cursor: pointer;
+    margin-right: 15px;
+    gap: 12px;
+}
+
+.btn-custom-img2 {
+    width: 27px;           
+    height: 27px;           
+    background-image: url('https://www.nicepng.com/png/detail/50-509099_wikimedia-commons-clipart-royalty-png-little-arrow-fish.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent; 
+    border: none;           
+    cursor: pointer;
+    margin-right: 15px;
+    gap: 12px;
+}
+.image-area {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-area img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eaeaea;
+}
+
+.preview-text {
+    color: #707070;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.info-details {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-top: 1px solid #eaeaea;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件管理介面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="sidebar">
+		<div class="header">
+    		<span class="label-text">名稱</span>
+    
+    		<div class="icon-group">
+        		<button class="btn-custom-img"></button>
+        		<button class="btn-custom-img2"></button>
+    		</div>
+		</div>
+        <div class="file-list">
+            <div class="file-item selected">
+                <input type="checkbox" checked>
+                <span>20171012_1.jpg</span>
+            </div>
+            <div class="file-item">
+                <input type="checkbox" checked>
+                <span>20171012_2.jpg</span>
+            </div>
+            </div>
+        <div class="footer">
+            數量：<span class="blue-text">2</span> / 100
+        </div>
+    </div>
+
+    <div class="preview-panel">
+        <div class="preview-header">
+            預覽
+            <button id="infoBtn" class="btn-info">查看資訊</button>
+        </div>
+        <div class="image-area">
+            <img src="https://picsum.photos/450/240" alt="Preview">
+        </div>
+        <div id="infoDetails" class="info-details hidden">
+            <div class="info-row">修改日期：2017/10/12</div>
+            <div class="info-row">類別：JPG</div>
+            <div class="info-row">大小：466.97KB</div>
+            <div class="info-row">路徑：\\designcenter.qnap.com.tw\...</div>
+        </div>
+    </div>
+</div>
+<script>
+    const infoBtn = document.getElementById('infoBtn');
+    const infoDetails = document.getElementById('infoDetails');
+
+    infoBtn.addEventListener('click', function() {        infoDetails.classList.toggle('hidden');
+        if (infoDetails.classList.contains('hidden')) {
+            infoBtn.textContent = '查看資訊';
+        } else {
+            infoBtn.textContent = '收起資訊';
+        }
+    });
+</script>
+</body>
+</html>
+
 
