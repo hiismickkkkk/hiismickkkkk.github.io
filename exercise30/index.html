@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="demo">hello</h1>
+
+<button type="button"
+    onmouseover="hoverRed()" 
+    onmouseout="resetColor()"
+    onclick="myFunction()">
+    button
+</button>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Mouse click";
+    document.getElementById("demo").style.color = "blue";
+}
+
+function hoverRed() {
+    document.getElementById("demo").style.color = "red";
+}
+
+function resetColor() {
+    document.getElementById("demo").style.color = "black";
+}
+</script>
+
+</body>
+</html>
