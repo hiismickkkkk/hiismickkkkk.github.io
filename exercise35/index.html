@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Object Task</title>
+</head>
+<body>
+
+    <h1>JavaScript Object Operations</h1>
+    
+    <h3>1. 原始物件的所有屬性 (Properties):</h3>
+    <p id="all-properties"></p>
+
+    <h3>2. 刪除 age 屬性後的物件內容:</h3>
+    <p id="after-delete"></p>
+
+<script>
+    var Person = {
+        firstName : "Tony",
+        lastName : "Lee",
+        age : 50,
+        eyeColor : "Blue"
+    };
+
+    var properties = Object.keys(Person); 
+    document.getElementById("all-properties").innerHTML = properties.join(", ");
+
+    delete Person.age;
+
+    document.getElementById("after-delete").innerHTML = JSON.stringify(Person);
+</script>
+
+</body>
+</html>
