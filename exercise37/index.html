@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>圓形屬性計算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #a67c33;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8a6525;
+        }
+        .result-box {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>圓形屬性計算</h2>
+    <label for="radiusInput">請輸入圓的半徑 (radius):</label>
+    <input type="number" id="radiusInput" placeholder="例如: 5" value="5">
+    <button type="button" onclick="startCalculate()">開始計算</button>
+
+    <div class="result-box">
+        <p id="circumference-out"></p>
+        <p id="area-out"></p>
+    </div>
+</div>
+
+<script>
+function calcCircumference(radius) {
+    var circumference = 2 * Math.PI * radius;
+    var outputText = "The circumference is " + circumference.toFixed(2);
+    document.getElementById("circumference-out").innerText = outputText;
+}
+
+
+function calcArea(radius) {
+    var area = Math.PI * radius * radius;
+    var outputText = "The area is " + area.toFixed(2);
+    document.getElementById("area-out").innerText = outputText;
+}
+
+function startCalculate() {
+    var r = parseFloat(document.getElementById("radiusInput").value);
+    
+    if (isNaN(r) || r <= 0) {
+        alert("請輸入大於 0 的有效半徑！");
+        return;
+    }
+    
+    calcCircumference(r);
+    calcArea(r);
+}
+</script>
+
+</body>
+</html>
